@@ -1,0 +1,122 @@
+.faq-wrapper {
+  .section-title {
+    br {
+      @include breakpoint(max-xl) {
+        display: none;
+      }
+    }
+  }
+  .faq-image {
+    img {
+      @include imgw;
+    }
+  }
+
+  .faq-content {
+    p {
+      padding-bottom: 40px;
+    }
+
+    .icon-items {
+      @include flex;
+      gap: 20px;
+      padding-top: 40px;
+      border-top: 1px solid $border-color;
+
+      &:not(:last-child) {
+        padding-bottom: 40px;
+      }
+
+      .icon {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        font-size: 35px;
+        background-color: $white;
+        color: $theme-color;
+        border-radius: 50%;
+      }
+
+      .content {
+        flex-basis: 80%;
+
+        h5 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .faq-accordion {
+    margin-left: 20px;
+
+    @include breakpoint(max-xl) {
+      margin-left: 0;
+    }
+
+    .accordion-item {
+      border: 0;
+      background-color: $white;
+
+      .accordion-header {
+        border: none;
+        .accordion-button {
+          font-weight: 500;
+          color: $theme-color;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+          background-color: $white;
+          padding: 25px 30px 0;
+          text-transform: capitalize;
+          font-size: 18px;
+
+          &::after {
+            // content: "\2b";
+            // font-family: "Font Awesome 6 Free";
+            // background: transparent;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out !important;
+            background-image: url(/assets/img/plus.svg);
+            color: $theme-color;
+          }
+          &:not(.collapsed)::after {
+            // content: "\f068";
+            // font-family: "Font Awesome 6 Free";
+            // background: transparent;
+            background-image: url(/assets/img/minus.svg);
+            font-weight: 500;
+            color: $theme-color;
+            transform: rotate(0);
+          }
+
+          &.collapsed {
+            background-color: transparent;
+            padding: 25px 30px;
+            color: $header-color;
+          }
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          padding-left: 30px;
+          padding-top: 15px;
+          color: $text-color;
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+.faq-section {
+  position: relative;
+
+  .track-shape {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+  }
+}

@@ -1,0 +1,377 @@
+.about-section {
+    position: relative;
+
+    .about-shape-1 {
+        position: absolute;
+        right: 120px;
+        top: 0;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+
+    .about-shape-2 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+
+    .about-shape-4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .about-shape-5 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.about-wrapper {
+    margin-bottom: 30px;
+
+    @include breakpoint (max-xxl){
+       margin-bottom: 0;
+    }
+
+    @include breakpoint (max-lg){
+       margin-bottom: 0;
+    }
+
+    .about-image {
+        position: relative;
+        max-width: 485px;
+
+        @include breakpoint (max-lg){
+           max-width: 760px;
+        }
+
+        img {
+            @include imgw;
+        }
+
+        .about-image-2 {
+            max-width: 260px;
+            border: 8px solid $white;
+            box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
+            position: absolute;
+            bottom: -30px;
+            right: -20%;
+            z-index: 9;
+
+            @include breakpoint (max-sm){
+               max-width: 200px;
+            }
+
+            @include breakpoint (max-xxl){
+               right: 0;
+               bottom: 0;
+            }
+
+            img {
+                @include imgw;
+            }
+
+            .video-box {
+                width: 70px;
+                height: 70px;
+                border: 1px solid $theme-color;
+                line-height: 70Px;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .video-btn {
+                    width: 57px;
+                    height: 57px;
+                    background-color: $theme-color;
+                    color: $white;
+                    line-height: 57px;
+                    text-align: center;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .about-line-shape {
+            position: absolute;
+            top: 0;
+            right: -50px;
+
+            @include breakpoint (max-xl){
+                display: none;
+            }
+        }
+    }
+
+    .about-content {
+        position: relative;
+        z-index: 9;
+
+        .list-items {
+            margin-top: 30px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+
+            li {
+                font-size: 18px;
+                font-weight: 500;
+                color: $header-color;
+
+                @include breakpoint (max-sm){
+                   font-size: 16px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+
+                i {
+                    margin-right: 15px;
+                    color: $theme-color
+                   
+                }
+            }
+        }
+
+        .about-author {
+            @include flex;
+            gap: 60px;
+            margin-top: 50px;
+
+            @include breakpoint (max-xl){
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            @include breakpoint (max-md){
+               margin-top: 35px;
+            }
+
+            @include breakpoint (max-sm){
+                margin-top: 25px;
+            }
+
+            .author-image {
+                @include flex;
+                gap: 15px;
+
+                .content {
+                    p {
+                        font-size: 14px;
+                        color: $text-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-wrapper-2 {
+    .about-image {
+        position: relative;
+        max-width: 410px;
+        z-index: 9;
+
+        @include breakpoint (max-xl){
+            max-width: 750px;
+        }
+
+        img {
+            @include imgw;
+        }
+
+        &::before {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            content: "";
+            width: 105%;
+            height: 123%;
+            border: 1px solid $theme-color;
+            z-index: -1;
+
+            @include breakpoint (max-xl){
+                display: none;
+            }
+        }
+
+        .about-image-2 {
+            position: absolute;
+            right: -44%;
+            bottom: -33%;
+            border: 5px solid $white;
+            box-shadow: $shadow;
+
+            @include breakpoint (max-xxl){
+               right: -24%;
+            }
+
+            @include breakpoint (max-xl){
+                right: 0;
+                bottom: 0;
+
+                img {
+                    @include imgw;
+                }
+            }
+
+            @include breakpoint (max-sm){
+                max-width: 200px;
+            }
+            
+        }
+
+        .video-items {
+            position: absolute;
+            bottom: -28%;
+            left: 22%;
+
+            @include breakpoint (max-xl){
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                bottom: initial;
+            }
+
+            .video-btn {
+                width: 58px;
+                height: 58px;
+                background-color: $theme-color;
+                color: $white;
+                line-height: 58px;
+                text-align: center;
+                display: block;
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+
+                &::before {
+                    width: 70px;
+                    height: 70px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    border: 1px solid $theme-color;
+                    content: "";
+                }
+            }
+
+            .video-text {
+                color: $header-color;
+                font-weight: 700;
+                text-transform: uppercase;
+                display: block;
+                margin-top: 15px;
+                font-size: 18px;
+                text-align: center;
+
+                @include breakpoint (max-xl){
+                    color: $white;
+                }
+            }
+
+            .video-items {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        .bar-shape {
+            position: absolute;
+            right: -26%;
+            top: 0;
+
+            @include breakpoint (max-xl){
+                display: none;
+            }
+        }
+    }
+
+    .about-content {
+        .icon-items {
+            @include flex;
+            gap: 15px;
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                line-height: 42px;
+                text-align: center;
+                background-color: $theme-color;
+                color: $white;
+                font-size: 30px;
+            }
+        }
+
+        .list-items {
+            margin-top: 40px;
+
+            li {
+                font-size: 18px;
+                font-weight: 500;
+                color: $header-color;
+
+                @include breakpoint (max-sm){
+                   font-size: 16px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+
+                i {
+                    margin-right: 15px;
+                    color: $theme-color
+                   
+                }
+            }
+        }
+
+        .about-author {
+            @include flex;
+            gap: 60px;
+            margin-top: 50px;
+
+            @include breakpoint (max-xxl){
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            @include breakpoint (max-md){
+               margin-top: 35px;
+            }
+
+            @include breakpoint (max-sm){
+                margin-top: 25px;
+            }
+
+            .author-image {
+                @include flex;
+                gap: 15px;
+
+                .content {
+                    p {
+                        font-size: 14px;
+                        color: $text-color;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

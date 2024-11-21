@@ -1,0 +1,100 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    background-color: $theme-color;
+    color: $white;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 24px 50px;
+    border-radius: 0;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+
+    &::before {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    &:hover {
+       color: $white;
+
+        &::before,&::after {
+            width: 100%;
+        }
+    }
+
+
+    &.bg-white {
+        background-color: $white;
+        color: $header-color;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+
+    @include breakpoint (max-md){
+        padding: 20px 32px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+}
+
+.link-btn {
+    display: inline-block;
+    color: $text-color;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    i {
+        margin-left: 10px;
+        transform: rotate(-40deg);
+        @include transition
+    }
+
+    &:hover {
+        color: $theme-color;
+        i {
+            margin-left: 10px;
+            transform: rotate(0);
+        }
+    }
+}
+
+//>>>>> Component Button End <<<<<//

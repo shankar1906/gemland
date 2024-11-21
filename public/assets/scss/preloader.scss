@@ -1,0 +1,103 @@
+$ring-radius: 7rem;
+$ring-sectors: 30;
+$animation-duration: 8s;
+
+.preloader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: rgb(241, 196, 15);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  font: 1em Dosis, sans-serif;
+  line-height: 1.5;
+  perspective: 40em;
+
+  .preloader {
+    display: flex;
+    align-items: center;
+    animation: tilt-spin $animation-duration linear infinite;
+    flex-direction: column;
+    justify-content: center;
+    width: 17em;
+    height: 17em;
+
+    &, &__ring {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+    }
+
+    &__ring {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: spin $animation-duration / 2 linear infinite;
+      font-size: 2em;
+      height: 3rem;
+      position: relative;
+      width: 1.5rem;
+
+      &:nth-child(even) {
+        animation-direction: reverse;
+      }
+    }
+
+    &__sector {
+      font-weight: 600;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+      transform: translateZ($ring-radius);
+
+      &, &:empty:before {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+
+      &:empty:before {
+        background: linear-gradient(
+          transparent 45%,
+          currentColor 45% 55%,
+          transparent 55%
+        );
+        content: "";
+      }
+    }
+
+    @for $s from 2 through $ring-sectors {
+      &__sector:nth-child(#{$s}) {
+        $angle: (360deg / $ring-sectors) * ($s - 1);
+        transform: rotateY($angle) translateZ($ring-radius);
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes tilt-spin {
+  from {
+    transform: rotateY(0deg) rotateX(30deg);
+  }
+  to {
+    transform: rotateY(1turn) rotateX(30deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}

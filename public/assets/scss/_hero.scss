@@ -1,0 +1,390 @@
+.hero-1 {
+    background-color: $bg-color;
+    position: relative;
+
+    .container-fluid {
+        padding: 0 150px;
+
+        @include breakpoint (max-xl4){
+            padding: 0 40px;
+        }
+
+        @include breakpoint (max-xxl){
+            padding: 0 25px;
+        }
+    }
+
+    .line-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .hero-content {
+        background-color: $theme-color;
+        padding: 105px 70px;
+        clip-path: polygon(0% 15%, 0 11%, 11% 0, 85% 0%, 100% 0, 100% 15%, 100% 88%, 91% 100%, 94% 100%, 15% 100%, 0 100%, 0% 85%);
+        max-width: 870px;
+        position: relative;
+
+        @include breakpoint (max-xxl){
+           padding: 70px 40px;
+        }
+
+        @include breakpoint (max-lg){
+            padding: 70px 50px;
+        }
+
+        @include breakpoint (max-md){
+            padding: 70px 40px;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 60px 30px;
+        }
+
+        .vector-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .vector-shape-2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+
+            br {
+                @include breakpoint (max-xl){
+                    display: none;
+                }
+            }
+
+            @include breakpoint (max-xxl){
+               font-size: 74px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 64px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 54px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 46px;
+                line-height: 126%;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-size: 23px;
+            font-weight: 500;
+            color: $white;
+            margin-top: 20px;
+
+            @include breakpoint (max-lg){
+                font-size: 21px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 19px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 17px;
+            }
+        }
+
+        .hero-button {
+            margin-top: 50px;
+            @include flex;
+            gap: 24px;
+
+            @include breakpoint (max-sm){
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .button-text {
+                .video-btn {
+                    width:55px;
+                    height: 55px;
+                    line-height: 55px;
+                    display: inline-block;
+                    background-color: transparent;
+                    border: 1px solid $white;
+                    border-radius: 50%;
+                    text-align: center;
+                    color: $white;
+                }
+
+                color: $white;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .hero-image-items {
+        margin-right: -48%;
+        position: relative;
+
+        @include breakpoint (max-lg){
+            margin-right: 0;
+        }
+
+        .hero-image {
+            @include breakpoint (max-lg){
+                height: 600px;
+            }
+
+            @include breakpoint (max-md){
+                height: 520px;
+            }
+
+            @include breakpoint (max-sm){
+                height: 420px;
+            }
+            
+            img {
+                @include imgw;
+                object-fit: cover
+            }
+        }
+
+        .array-button {
+            @include flex;
+            gap: 500px;
+            margin-top: 40px;
+            position: relative;
+
+            @include breakpoint (max-xl4){
+                gap: 50px;
+                justify-content: start;
+            }
+
+            @include breakpoint (max-lg){
+                justify-content: center;
+            }
+
+            &::before {
+                position: absolute;
+                top: 14px;
+                left: 100px;
+                content: "";
+                width: 465px;
+                height: 1px;
+                opacity: 0.5;
+                background: $white;
+
+                @include breakpoint (max-xl4){
+                   display: none;
+                }
+            }
+
+            .array-prevs,.array-nexts {
+                color: $white;
+                font-size: 16px;
+                font-weight: 500;
+                @include flex;
+                gap: 5px;
+            }
+
+            .array-nexts {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.hero-2 {
+    position: relative;
+    z-index: 9;
+    padding: 230px 0 400px;
+    position: relative;
+
+    @include breakpoint (max-xxl){
+        padding: 235px 0 150px;
+    }
+
+    @include breakpoint (max-md){
+        padding: 195px 0 120px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 175px 0 100px;
+    }
+
+    &::before {
+        @include before;
+        z-index: -1;
+        background: rgba(18, 19, 21, 0.85);
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 220px;
+        left: 89px;
+
+        @include breakpoint (max-xl4){
+            left: 0;
+
+            img {
+                @include imgw;
+            }
+        }
+
+        @include breakpoint (max-xxxl){
+            max-width: 500px;
+            left: 0;
+
+            img {
+                @include imgw;
+            }
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+
+    .hero-image-2 {
+        position: absolute;
+        top: 220px;
+        right: 89px;
+
+        @include breakpoint (max-xxxl){
+            max-width: 500px;
+            right: 0;
+
+            img {
+                @include imgw;
+            }
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+
+        .video-box {
+            width: 218px;
+            height: 218px;
+            text-align: center;
+            background-color: $theme-color;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            .video-btn {
+                width: 62px;
+                height: 62px;
+                background-color: $white;
+                color: $theme-color;
+                line-height: 62px;
+                text-align: center;
+                display: inline-block;
+                position: relative;
+
+                &::before {
+                    width: 76px;
+                    height: 76px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    border: 1px solid $white;
+                    content: "";
+                }
+            }
+
+            .video-text {
+                color: $white;
+                font-weight: 500;
+                text-transform: uppercase;
+                display: inline-block;
+                margin-top: 15px;
+            }
+
+            .video-items {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 9;
+        margin-left: 30px;
+        margin-top: -35px;
+
+        @include breakpoint (max-xxl){
+          text-align: center;
+          margin-top: 0;
+          margin-left: 0;
+        }
+
+        h1 {
+            font-size: 90px;
+            color: $white;
+            letter-spacing: -2.7px;
+            text-transform: uppercase;
+            line-height: 118%;
+
+            @include breakpoint (max-xxl){
+                font-size: 80px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 70px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 55px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 42px;
+            }
+
+            b {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+
+    .hero-text {
+        max-width: 500px;
+        position: absolute;
+        bottom: 85px;
+        right: 28%;
+
+        @include breakpoint (max-xxl){
+            position: static;
+            text-align: center;
+            margin: 30px auto 0;
+        }
+
+        p {
+            font-weight: 500;
+            color: $white;
+            margin-bottom: 25px;
+        }
+    }
+}

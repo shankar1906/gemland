@@ -1,0 +1,308 @@
+.skills-wrapper {
+    .skills-image {
+        position: relative;
+
+        @include breakpoint (max-lg){
+            height: 600px;
+        }
+
+        @include breakpoint (max-md){
+            height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 400px;
+        }
+
+        img {
+            @include imgw;
+            object-fit: cover;
+        }
+
+        .logo-shape {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+    }
+
+    .skill-content {
+        margin-left: 60px;
+
+        @include breakpoint (max-xl){
+            margin-left: 30px;
+        }
+
+        @include breakpoint (max-lg){
+            margin-left: 0;
+        }
+
+        p {
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 30px;
+        }
+
+        .skill-feature-items {
+            margin-top: 30px;
+
+            .skill-feature {
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                }
+
+                .box-title {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .progress-value {
+                    margin-bottom: 10px;
+                    //margin-top: -0.5em;
+                    color: $header-color;
+                    text-transform: capitalize;
+                }
+                .progress {
+                    position: relative;
+                    height: 10px;
+                    background-color: $bg-color;
+                    border-radius: 0;
+                    overflow: visible;
+                    margin-top: 15px;
+                }
+            
+                .progress-bar {
+                    background-color: $theme-color;
+                    height: 10px;
+                    margin: 0;
+                    border-radius: inherit;
+                    overflow: visible;
+                    position: relative;
+                    margin-top: 0;
+                }
+                .progress-value {
+                    position: absolute;
+                    top: -38px;
+                    right: -8px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}
+
+.skills-section  {
+    position: relative;
+
+    .shape-1 {
+        position: absolute;
+        left: 0;
+        top: 40%;
+    }
+
+    .shape-2 {
+        position: absolute;
+        right: 0;
+        bottom: 15%;
+    }
+}
+
+.achivements-wrapper {
+    .achivements-content {
+        .counter-items {
+            position: relative;
+            .content {
+                background-color: $white;
+                padding: 30px 30px 30px 80px;
+                text-align: center;
+                margin-top: 30px;
+    
+                h2 {
+                    font-size: 42px;
+                    color: $theme-color;
+                }
+
+                .icon {
+                    width: 60px;
+                    height: 96px;
+                    line-height: 110px;
+                    background-color: $theme-color;
+                    color: $white;
+                    position: absolute;
+                    left: 30px;
+                    top: 0;
+                }
+            }
+           
+        }
+    }
+
+    .achivements-image {
+        position: relative;
+       
+        @include breakpoint (max-lg){
+            height: 650px;
+        }
+
+        @include breakpoint (max-md){
+            height: 550px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 450px;
+        }
+
+        img {
+            @include imgw;
+            object-fit: cover;
+        }
+
+        .achivements-image-2 {
+            position: absolute;
+            left: -30%;
+            top: 20%;
+
+            @include breakpoint (max-xxl){
+               left: 0;
+            }
+
+            @include breakpoint (max-xxs){
+               height: 250px;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            bottom: 30px;
+            left: -30px;
+            content: "";
+            height: 80px;
+            width: 5px;
+            background-color: $theme-color;
+        }
+    }
+}
+
+.achivements-wrapper-2 {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    position: relative;
+    background-color: rgba(242, 245, 250, 1);
+    position: relative;
+
+    @include breakpoint (max-xl){
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+
+    @include breakpoint (max-md){
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+
+    .bg-shape {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+
+        // @include breakpoint (max-xl){
+        //     display: none;
+        // }
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .achivements-content {
+        position: relative;
+
+        .section-title {
+            h6 {
+                color: $white;
+
+                // @include breakpoint (max-xl){
+                //     color: $theme-color;
+                // }
+            }
+
+            h2 {
+                color: $header-color;
+            }
+        }
+    }
+
+    .achivements-right-items {
+        position: relative;
+
+        .achivements-item {
+            @include flex;
+            justify-content: space-between;
+
+            // @include breakpoint (max-sm){
+            //     flex-wrap: wrap;
+            //     gap: 30px;
+            // }
+
+            .counter-items {
+                position: relative;
+                @include flex;
+                gap: 20px;
+        
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 60px;
+                    background-color: $white;
+                    font-size: 36px;
+                    text-align: center;
+                    color: $theme-color;
+                }
+        
+                .content {
+        
+                    h2 {
+                        
+                        color: $header-color;
+                    }
+                }
+               
+                &.style-2 {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .border-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            // @include breakpoint (max-xxl){
+            //     display: none;
+            // }
+        }
+    }
+}
+
+.achivements-section {
+    position: relative;
+
+    .man-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        @include breakpoint (max-xxxl){
+            display: none;
+        }
+    }
+}

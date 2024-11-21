@@ -1,0 +1,205 @@
+.contact-section {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        @include before;
+        z-index: -1;
+        background-color: $theme-color;
+        opacity: 0.8;
+    }
+
+    .contact-image {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+}
+
+.contact-wrapper {
+    position: relative;
+    z-index: 9;
+    
+    .contact-items {
+        padding: 30px;
+        background-color: $white;
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .form-clt {
+            input,textarea {
+                border: 1px solid $theme-color;
+                background: rgba(245, 91, 31, 0.10);
+                color: $theme-color;
+                padding: 16px 20px;
+                line-height: 1;
+                width: 100%;
+                text-transform: capitalize;
+                outline: none;
+
+                &::placeholder {
+                    color: $theme-color;
+                }
+            }
+
+            textarea {
+                padding-bottom: 130px;
+            }
+        }
+    }
+
+    .contact-content {
+        @include breakpoint (xl){
+            margin-left: 20px;
+        }
+
+        .icon-items {
+            @include flex;
+            gap: 15px;
+            margin-top: 30px;
+
+            .icon {
+                width: 63px;
+                height: 63px;
+                line-height: 63px;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1px solid $white;
+                text-align: center;
+
+               i {
+                    width: 39px;
+                    height: 39px;
+                    line-height: 39px;
+                    text-align: center;
+                    border-radius: 50%;
+                    background-color: $white;
+                    color: $theme-color;
+               }
+            }
+
+            .content {
+                span {
+                    color: $white;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+
+                h4 {
+                    margin-top: 5px;
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-box-items {
+    @include flex;
+    gap: 20px;
+    background-color: #F2F5FA;
+
+    .icon {
+        width: 71px;
+        height: 71px;
+        line-height: 71px;
+        text-align: center;
+        background-color: $white;
+        color: $theme-color;
+        font-size: 50px;
+    }
+
+    .content {
+        h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            a {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.contact-form-items {
+    background-color: $white;
+    padding: 120px 40px;
+    margin-bottom: -350px;
+    position: relative;
+    z-index: 9;
+    box-shadow: 0px -10px 40px 0px rgba(0, 0, 0, 0.15);
+
+    @include breakpoint (max-xl){
+        padding: 100px 40px;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 80px 30px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+
+        h2 {
+            margin-bottom: 5px;
+        }
+    }
+
+    .form-clt {
+        position: relative;
+
+        input,textarea {
+            padding: 16px 30px;
+            border: none;
+            outline: none;
+            background-color: #F2F5FA;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            color: $text-color;
+
+            @include breakpoint (max-sm){
+               padding: 12px 20px;
+            }
+        }
+
+        textarea {
+            padding: 18px 30px 110px;
+
+            @include breakpoint (max-sm){
+                padding: 12px 20px 90px;
+            }
+        }
+
+        &::placeholder {
+            color: $text-color;
+        }
+
+        .icon {
+            position: absolute;
+            right: 30px;
+            top: 16px;
+            color: $text-color;
+        }
+    }
+}
+
+.office-google-map-wrapper {
+    iframe {
+        width: 100%;
+        height: 700px;
+    }
+}

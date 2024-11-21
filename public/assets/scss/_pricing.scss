@@ -1,0 +1,145 @@
+.pricing-card-items {
+    margin-top: 30px;
+    background-color: $white;
+    padding: 40px;
+    position: relative;
+    z-index: 9;
+    @include transition;
+
+    .pricing-header {
+        max-width: 170px;
+        padding-bottom: 30px;
+
+        h3 {
+            border-bottom: 2px solid $theme-color;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 38px;
+            color: $text-color;
+            padding-top: 15px;
+
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .pricing-list {
+        border-top: 1px solid #D9D9D9;
+        padding-top: 30px;
+
+        li {
+            font-size: 16px;
+            font-weight: 600;
+            color: $header-color;
+
+            &:not(:last-child){
+                margin-bottom: 15px;
+            }
+
+            i {
+                color: $theme-color;
+                margin-right: 10px;
+            }
+
+            &.style-2 {
+                color: $text-color;
+
+                i {
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .header-button {
+        margin-top: 40px;
+
+        .theme-btn {
+            &.style-2 {
+                background-color: $header-color;
+
+                &::before,&::after {
+                    background-color: $theme-color;
+                }
+    
+                span {
+                    position: relative;
+    
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: -50px;
+                        transform: translateY(-50%);
+                        width: 4px;
+                        height: 25px;
+                        background-color: $theme-color;
+                        z-index: 99;
+                        content: "";
+
+                        @include breakpoint (max-md){
+                            left: -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pricing-shape {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    &.active {
+        .pricing-header {
+    
+            h3 {
+                color: $theme-color;
+            }
+    
+            h2 {
+               color: $header-color;
+            }
+        }
+
+        .tag-img {
+            position: absolute; 
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+.pricing-section {
+    position: relative;
+
+    .pricing-arrow-shape {
+        position: absolute;
+        right: 0;
+        top: 10%;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .pricing-circle-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
