@@ -14,7 +14,7 @@ export default function About({ btn }) {
       >
         <div className={`section-title text-center ${btn ? '' : 'breadcrumb-title'}`}>
           <h2 className="splt-txt wow" style={{ color: '#ffcd1f' }}>
-            <AnimatedText text="About Us" /> <br />
+            <AnimatedText text="About Us" />
           </h2>
         </div>
         <div className="about-shape-1 float-bob-x">

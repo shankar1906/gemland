@@ -11,6 +11,7 @@ import { db } from "@/app/api/db/config";
 import ProjectAmenities from "@/components/main/ProjectAmenites";
 import ProjectInfo from "@/components/main/ProjectInfo";
 import GalleryImages from "@/components/main/GalleryImages";
+import Preloader from "@/app/proloader";
 
 // export const metadata = {
 //   title: "Project || Gemland Property – Residential Plots & Farm Sites | Discover your perfect property today!",

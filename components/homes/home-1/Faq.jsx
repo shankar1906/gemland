@@ -38,15 +38,15 @@ export default function Faq() {
                             }`}
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target={`#faq${faq.id}`}
+                          data-bs-target={`#faq${faq.Value}`}
                           aria-expanded={faq.expanded}
-                          aria-controls={`faq${faq.id}`}
+                          aria-controls={`faq${faq.Value}`}
                         >
                           {faq.question}
                         </button>
                       </h5>
                       <div
-                        id={`faq${faq.id}`}
+                        id={`faq${faq.Value}`}
                         className={`accordion-collapse collapse ${faq.expanded ? "show" : ""
                           }`}
                         data-bs-parent="#accordion"

@@ -76,10 +76,6 @@ export default function ProjectsHome({ type = null }) {
     >
       <div className="container">
         <div className="section-title text-center">
-          {/* <h6 className="wow fadeInUp">
-            <i className="fa-regular fa-arrow-left-long"></i>WHAT WE OFFER
-            <i className="fa-regular fa-arrow-right-long"></i>
-          </h6> */}
           <h2 className="splt-txt wow" style={{ color: "#fff" }}>
             <AnimatedText text={`Our${type ? ` ${type} ` : " "}Projects`} />
           </h2>

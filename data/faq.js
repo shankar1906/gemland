@@ -1,13 +1,17 @@
+import { Value } from "sass";
+
 export const faqs = [
   {
     id: 1,
+    Value:1,
     question: "What amenities and features does Royal Paradise in Kalapatti offer?",
     answer: "Royal Gateway in Vadavalli provides luxurious apartments and villas, offering comfort and elegance in a prime location. Enjoy a range of premium residential options designed for modern living.",
     delay: ".1s",
     expanded: true,
   },
   {
-    id: 1,
+    id: 2,
+    Value:1,
     question:
       "Where is Royal Enclave, and what’s it like to live there?",
     answer:
@@ -16,7 +20,8 @@ export const faqs = [
     expanded: true,
   },
   {
-    id: 2,
+    id: 3,
+    Value:2,
     question:
       "Where is Royal Village located, and what’s special about it?",
     answer:
@@ -25,7 +30,8 @@ export const faqs = [
     expanded: false,
   },
   {
-    id: 2,
+    id: 4,
+    Value:2,
     question:
       "How can I learn more about these properties and contact your team?",
     answer:

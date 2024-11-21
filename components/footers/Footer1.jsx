@@ -240,7 +240,7 @@ export default function Footer1() {
         notificationSound
         statusMessage="Online"
       />
-      <a href="tel:+919876543215" className="float1" target="_blank">
+      <a href="tel:+919159644555" className="float1" target="_blank">
         <i className="fa fa-phone my-float" style={{ "padding": "10px" }}></i>
       </a>
     </footer>

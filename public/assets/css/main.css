@@ -6460,7 +6460,7 @@ input.main-search-input::placeholder {
 
 .section-title {
   position: relative;
-  z-index: 99;
+  /* z-index: 99; */
   margin-bottom: 30px;
   margin-top: -7px;
 }
@@ -6495,7 +6495,7 @@ input.main-search-input::placeholder {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 9;
+  /* z-index: 9; */
 }
 
 @media (max-width: 991px) {

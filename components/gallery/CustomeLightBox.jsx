@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
@@ -42,7 +43,7 @@ const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
 
   return (
     <div style={overlayStyle} onClick={onClose}>
-      <img src={images[currentIndex]} alt="" style={imageStyle} />
+      <Image src={images[currentIndex]} alt="img" style={imageStyle} width={1000} height={1000} />
       <button
         onClick={onClose}
         style={isMobile ? closeButtonMobileStyle : closeButtonStyle}
