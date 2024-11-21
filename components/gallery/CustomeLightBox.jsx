@@ -1,8 +1,22 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 
 const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex || 0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   useEffect(() => {
     if (initialIndex !== undefined) {
@@ -13,14 +27,14 @@ const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
   if (!isOpen) return null;
 
   const handleNext = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setCurrentIndex((prevIndex) =>
       prevIndex < images.length - 1 ? prevIndex + 1 : 0
     );
   };
 
   const handlePrevious = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setCurrentIndex((prevIndex) =>
       prevIndex > 0 ? prevIndex - 1 : images.length - 1
     );
@@ -29,7 +43,10 @@ const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
   return (
     <div style={overlayStyle} onClick={onClose}>
       <img src={images[currentIndex]} alt="" style={imageStyle} />
-      <button onClick={onClose} style={isMobile ? closeButtonMobileStyle : closeButtonStyle}>
+      <button
+        onClick={onClose}
+        style={isMobile ? closeButtonMobileStyle : closeButtonStyle}
+      >
         &times;
       </button>
       <button style={leftArrowStyle} onClick={handlePrevious}>
@@ -41,10 +58,6 @@ const CustomLightBox = ({ isOpen, onClose, images, initialIndex }) => {
     </div>
   );
 };
-
-
-
-const isMobile = window.innerWidth <= 768; 
 
 const overlayStyle = {
   position: 'fixed',
@@ -88,6 +101,7 @@ const closeButtonStyle = {
   cursor: 'pointer',
   zIndex: 1002,
 };
+
 const closeButtonMobileStyle = {
   position: 'absolute',
   top: '26%',
